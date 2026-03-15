@@ -7,10 +7,8 @@ from googletrans import Translator
 
 translator = Translator()
 
-
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
-
 
 # RSS一覧読み込み
 with open("rss_list.json", "r", encoding="utf-8") as f:
@@ -28,25 +26,26 @@ for src in rss_sources:
         published = getattr(entry, "published", "")
         published_parsed = getattr(entry, "published_parsed", None)
 
-        # 日付を datetime に変換（なければ現在時刻）
+        # 日付変換
         if published_parsed:
             published_dt = datetime.fromtimestamp(mktime(published_parsed))
         else:
             published_dt = datetime.now()
 
-        # 公式ブログなどは日本語に翻訳
+        # 翻訳（公式ブログのみ）
         if src.get("translate", False):
             try:
-                title_ja = translator.translate(title, dest="ja").text
+                title = translator.translate(title, dest="ja").text
                 if summary:
-                    summary_ja = translator.translate(summary, dest="ja").text
-                else:
-                    summary_ja = ""
-                title = title_ja
-                summary = summary_ja
+                    summary = translator.translate(summary, dest="ja").text
             except Exception:
-                # 翻訳に失敗したら元のまま
                 pass
+
+        # 概要を短めに整形（1〜2行）
+        if summary:
+            summary = summary.replace("\n", " ")
+            if len(summary) > 120:
+                summary = summary[:120] + "…"
 
         items.append({
             "title": title,
@@ -56,16 +55,15 @@ for src in rss_sources:
             "published_dt": published_dt,
             "source": src["name"],
             "priority": src["priority"],
-            "kind": src.get("type", "news")  # news / official
+            "kind": src["type"]  # news / official
         })
 
-# 重複排除（タイトル類似度）
+# 重複排除
 filtered = []
 for item in items:
-    is_duplicate = False    # 類似タイトルを排除
+    is_duplicate = False
     for f in filtered:
         if similar(item["title"], f["title"]) > 0.7:
-            # priority が高い方を残す
             if item["priority"] > f["priority"]:
                 filtered.remove(f)
                 filtered.append(item)
@@ -74,25 +72,22 @@ for item in items:
     if not is_duplicate:
         filtered.append(item)
 
-# 重要度順にソート（priority → 日付）
+# ソート
 filtered.sort(key=lambda x: (x["priority"], x["published_dt"]), reverse=True)
 
-# カテゴリ別に分割
+# カテゴリ分割
 news_items = [i for i in filtered if i["kind"] == "news"]
 official_items = [i for i in filtered if i["kind"] == "official"]
 
-# 各カテゴリの TOP10
+# TOP10
 top_news = news_items[:10]
 top_official = official_items[:10]
 
-# TOP から外れたものを「その他候補」に
+# その他20件
 top_keys = {(i["title"], i["link"]) for i in top_news + top_official}
-other_candidates = [i for i in filtered if (i["title"], i["link"]) not in top_keys]
+other_items = [i for i in filtered if (i["title"], i["link"]) not in top_keys][:20]
 
-# その他は 20 件まで
-other_items = other_candidates[:20]
-
-# HTML生成（Yahoo!ニュースっぽいレイアウト）
+# HTML生成
 html = f"""
 <!DOCTYPE html>
 <html lang="ja">
@@ -116,162 +111,143 @@ body {{
   font-weight: bold;
 }}
 
-.header span.logo {{
-  color: #ffcc00;
-}}
-
 .container {{
   max-width: 960px;
   margin: 16px auto;
-  background-color: #ffffff;
   padding: 16px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }}
 
-.updated {{
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 12px;
-}}
-
-.main-title {{
+.section-title {{
   font-size: 18px;
   font-weight: bold;
+  margin: 16px 0 8px;
   border-left: 4px solid #2f6fbd;
   padding-left: 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
 }}
 
-.main-news-item {{
-  border-bottom: 1px solid #e5e5e5;
-  padding: 10px 0;
+.card {{
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }}
 
-.main-news-item:last-child {{
-  border-bottom: none;
+.card-official {{
+  border: 1px solid #2f6fbd;
 }}
 
-.main-news-item a {{
+.card ul {{
+  margin: 0;
+  padding-left: 18px;
+}}
+
+.card li {{
+  margin-bottom: 4px;
+  font-size: 14px;
+}}
+
+.card a {{
   text-decoration: none;
   color: #1a0dab;
-  font-size: 16px;
   font-weight: bold;
 
-  /* タイトルを2行で省略 */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }}
 
-.main-news-item a:hover {{
+.card a:hover {{
   text-decoration: underline;
 }}
 
-.main-meta {{
+.meta {{
   font-size: 12px;
   color: #777;
-  margin-top: 4px;
-}}
-
-.main-summary {{
-  font-size: 13px;
-  color: #333;
-  margin-top: 4px;
-}}
-
-.sub-title {{
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  border-left: 4px solid #999;
-  padding-left: 8px;
 }}
 
 .sub-list {{
   list-style: none;
   padding-left: 0;
-  margin: 0;
 }}
 
 .sub-list li {{
-  font-size: 13px;
-  padding: 4px 0;
-  border-bottom: 1px dotted #ddd;
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 14px;
 }}
 
-.sub-list li a {{
+.sub-list a {{
   text-decoration: none;
   color: #1a0dab;
-}}
 
-.sub-list li a:hover {{
-  text-decoration: underline;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }}
 
 .sub-meta {{
   font-size: 11px;
   color: #777;
-  margin-left: 4px;
 }}
 </style>
 </head>
 <body>
-<div class="header">
-  <span class="logo">IT</span> News Daily
-</div>
-<div class="container">
-  <div class="updated">最終更新: {datetime.now().strftime("%Y-%m-%d %H:%M")}</div>
 
-  <div class="main-title">ニュース TOP10</div>
+<div class="header">IT News Daily</div>
+
+<div class="container">
+
+<div class="section-title">ニュース TOP10</div>
 """
 
-# ニュース TOP10（短縮タイトル＋概略＋リンク）
+# ニュース TOP10
 for item in top_news:
     html += f"""
-  <div class="main-news-item">
-    <a href="{item['link']}" target="_blank" rel="noopener noreferrer">{item['title']}</a>
-    <div class="main-meta">{item['source']} / {item['published']}</div>
+<div class="card">
+  <ul>
+    <li><a href="{item['link']}" target="_blank">{item['title']}</a></li>
+    <li>{item['summary']}</li>
+    <li class="meta">{item['source']} / {item['published']}</li>
+  </ul>
+</div>
 """
-    if item["summary"]:
-        html += f"""    <div class="main-summary">{item['summary']}</div>
-"""
-    html += "  </div>\n"
 
-# 公式ドキュメント・ブログ TOP10
+# 公式 TOP10
 html += """
-  <div class="main-title">公式ドキュメント・ブログ TOP10</div>
+<div class="section-title">公式ドキュメント・ブログ TOP10</div>
 """
 
 for item in top_official:
     html += f"""
-  <div class="main-news-item">
-    <a href="{item['link']}" target="_blank" rel="noopener noreferrer">{item['title']}</a>
-    <div class="main-meta">{item['source']} / {item['published']}</div>
+<div class="card card-official">
+  <ul>
+    <li><a href="{item['link']}" target="_blank">{item['title']}</a></li>
+    <li>{item['summary']}</li>
+    <li class="meta">{item['source']} / {item['published']}</li>
+  </ul>
+</div>
 """
-    if item["summary"]:
-        html += f"""    <div class="main-summary">{item['summary']}</div>
-"""
-    html += "  </div>\n"
 
-# その他（20件まで）
+# その他20件
 html += """
-  <div class="sub-title">その他のニュース</div>
-  <ul class="sub-list">
+<div class="section-title">その他のニュース（20件）</div>
+<ul class="sub-list">
 """
 
 for item in other_items:
     html += f"""
-    <li>
-      <a href="{item['link']}" target="_blank" rel="noopener noreferrer">{item['title']}</a>
-      <span class="sub-meta">{item['source']}</span>
-    </li>
+  <li>
+    <a href="{item['link']}" target="_blank">{item['title']}</a>
+    <span class="sub-meta"> / {item['source']}</span>
+  </li>
 """
 
 html += """
-  </ul>
+</ul>
 </div>
 </body>
 </html>
