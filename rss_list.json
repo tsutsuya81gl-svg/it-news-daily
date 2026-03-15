@@ -1,11 +1,11 @@
 {
   "sources": [
-    { "name": "ITmedia", "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml", "priority": 3, "translate": false },
-    { "name": "ZDNet Japan", "url": "https://japan.zdnet.com/rss/index.rdf", "priority": 3, "translate": false },
-    { "name": "Yahooニュース IT", "url": "https://news.yahoo.co.jp/rss/topics/it.xml", "priority": 4, "translate": false },
-    { "name": "Impress Watch", "url": "https://www.watch.impress.co.jp/data/rss/1.0/ipw/feed.rdf", "priority": 3, "translate": false },
+    { "name": "ITmedia", "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml", "priority": 3, "translate": false, "type": "news" },
+    { "name": "ZDNet Japan", "url": "https://japan.zdnet.com/rss/index.rdf", "priority": 3, "translate": false, "type": "news" },
+    { "name": "Yahooニュース IT", "url": "https://news.yahoo.co.jp/rss/topics/it.xml", "priority": 4, "translate": false, "type": "news" },
+    { "name": "Impress Watch", "url": "https://www.watch.impress.co.jp/data/rss/1.0/ipw/feed.rdf", "priority": 3, "translate": false, "type": "news" },
 
-    { "name": "Google Official Blog", "url": "https://blog.google/rss/", "priority": 5, "translate": true },
-    { "name": "Microsoft Blog", "url": "https://blogs.microsoft.com/feed/", "priority": 5, "translate": true }
+    { "name": "Google Official Blog", "url": "https://blog.google/rss/", "priority": 5, "translate": true, "type": "official" },
+    { "name": "Microsoft Blog", "url": "https://blogs.microsoft.com/feed/", "priority": 5, "translate": true, "type": "official" }
   ]
 }
