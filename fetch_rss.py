@@ -22,7 +22,28 @@ for src in rss_sources:
     for entry in feed.entries:
         title = entry.title
         link = entry.link
-        summary = getattr(entry, "summary", "")
+
+        # ▼▼▼ ここから置き換え ▼▼▼
+
+        # 概要の取得（fallback付き）
+        summary = ""
+
+        if hasattr(entry, "summary"):
+            summary = entry.summary
+        elif hasattr(entry, "description"):
+            summary = entry.description
+        elif "content" in entry and len(entry.content) > 0:
+            summary = entry.content[0].value
+        else:
+            parts = entry.title.replace("．", "。").split("。")
+            summary = "。".join(parts[:2]) + "。"
+
+        summary = summary.replace("\n", " ").replace("<br>", " ")
+        if len(summary) > 120:
+            summary = summary[:120] + "…"
+
+        # ▲▲▲ ここまで置き換え ▲▲▲
+
         published = getattr(entry, "published", "")
         published_parsed = getattr(entry, "published_parsed", None)
 
@@ -41,12 +62,6 @@ for src in rss_sources:
             except Exception:
                 pass
 
-        # 概要を短めに整形（1〜2行）
-        if summary:
-            summary = summary.replace("\n", " ")
-            if len(summary) > 120:
-                summary = summary[:120] + "…"
-
         items.append({
             "title": title,
             "link": link,
@@ -55,7 +70,7 @@ for src in rss_sources:
             "published_dt": published_dt,
             "source": src["name"],
             "priority": src["priority"],
-            "kind": src["type"]  # news / official
+            "kind": src["type"]
         })
 
 # 重複排除
