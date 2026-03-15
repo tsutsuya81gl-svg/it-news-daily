@@ -21,336 +21,364 @@ body {
   font-weight: bold;
 }
 
-.header span.logo {
-  color: #ffcc00;
-}
-
 .container {
   max-width: 960px;
   margin: 16px auto;
-  background-color: #ffffff;
   padding: 16px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
-.updated {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.main-title {
+.section-title {
   font-size: 18px;
   font-weight: bold;
+  margin: 16px 0 8px;
   border-left: 4px solid #2f6fbd;
   padding-left: 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
 
-.main-news-item {
-  border-bottom: 1px solid #e5e5e5;
-  padding: 10px 0;
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-.main-news-item:last-child {
-  border-bottom: none;
+.card-official {
+  border: 1px solid #2f6fbd;
 }
 
-.main-news-item a {
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card li {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.card a {
   text-decoration: none;
   color: #1a0dab;
-  font-size: 16px;
   font-weight: bold;
 
-  /* タイトルを2行で省略 */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.main-news-item a:hover {
+.card a:hover {
   text-decoration: underline;
 }
 
-.main-meta {
+.meta {
   font-size: 12px;
   color: #777;
-  margin-top: 4px;
-}
-
-.main-summary {
-  font-size: 13px;
-  color: #333;
-  margin-top: 4px;
-}
-
-.sub-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  border-left: 4px solid #999;
-  padding-left: 8px;
 }
 
 .sub-list {
   list-style: none;
   padding-left: 0;
-  margin: 0;
 }
 
 .sub-list li {
-  font-size: 13px;
-  padding: 4px 0;
-  border-bottom: 1px dotted #ddd;
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 14px;
 }
 
-.sub-list li a {
+.sub-list a {
   text-decoration: none;
   color: #1a0dab;
-}
 
-.sub-list li a:hover {
-  text-decoration: underline;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .sub-meta {
   font-size: 11px;
   color: #777;
-  margin-left: 4px;
 }
 </style>
 </head>
 <body>
-<div class="header">
-  <span class="logo">IT</span> News Daily
-</div>
+
+<div class="header">IT News Daily</div>
+
 <div class="container">
-  <div class="updated">最終更新: 2026-03-15 12:50</div>
 
-  <div class="main-title">ニュース TOP10</div>
+<div class="section-title">ニュース TOP10</div>
 
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6573205?source=rss" target="_blank" rel="noopener noreferrer">ガラケー型スマホ 在庫切れの店も</a>
-    <div class="main-meta">Yahooニュース IT / Sun, 15 Mar 2026 07:30:29 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6573092?source=rss" target="_blank" rel="noopener noreferrer">Netflix日本幹部 WBC批判に答え</a>
-    <div class="main-meta">Yahooニュース IT / Sat, 14 Mar 2026 07:23:49 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6573064?source=rss" target="_blank" rel="noopener noreferrer">iPhone17eの狙い Apple幹部語る</a>
-    <div class="main-meta">Yahooニュース IT / Sat, 14 Mar 2026 02:57:39 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6573005?source=rss" target="_blank" rel="noopener noreferrer">AI音声で初の議員点呼 衆院本会議</a>
-    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 08:45:25 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6572984?source=rss" target="_blank" rel="noopener noreferrer">攻撃動画にゲーム画面 米投稿物議</a>
-    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 05:21:32 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6572954?source=rss" target="_blank" rel="noopener noreferrer">「ロボットの家電化」進む中国</a>
-    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 00:24:18 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6572927?source=rss" target="_blank" rel="noopener noreferrer">メタ 25年に不正広告100万件削除</a>
-    <div class="main-meta">Yahooニュース IT / Thu, 12 Mar 2026 11:51:38 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://news.yahoo.co.jp/pickup/6572864?source=rss" target="_blank" rel="noopener noreferrer">ランサムウエア被害 高止まり続く</a>
-    <div class="main-meta">Yahooニュース IT / Thu, 12 Mar 2026 01:36:08 GMT</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://www.watch.impress.co.jp/docs/series/suzukij/2093082.html" target="_blank" rel="noopener noreferrer">【鈴木淳也のPay Attention】クレカ乗車で「定期券」はどう変わるのか?　熊本に見る交通系IC“棲み分け”</a>
-    <div class="main-meta">Impress Watch / </div>
-    <div class="main-summary">既報の通り、三井住友カードは3月9日、東京都内で「stera transit シンポジウム 2026」を開催し、同社が推進する“タッチ決済”による公共交通乗車サービス「stera transit」の最新情報や新サービスについて紹介した。</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://www.watch.impress.co.jp/docs/review/minireview/2091731.html" target="_blank" rel="noopener noreferrer">「HUAWEI Band 11 Pro」の完成度　軽量・長持ち・GPS対応の新スマートウォッチに【ミニレビュー】</a>
-    <div class="main-meta">Impress Watch / </div>
-    <div class="main-summary">ファーウェイ・ジャパンから、薄型軽量スマートウォッチ「HUAWEI Band 11 Pro」が発売されました。価格は11,880円です。「HUAWEI Band 4 Pro」以来6年ぶりとなるProモデルとして国内投入されました。</div>
-  </div>
-
-  <div class="main-title">公式ドキュメント・ブログ TOP10</div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/innovation-and-ai/technology/health/google-earth-ai-global-public-health/" target="_blank" rel="noopener noreferrer">Google Earth AI の惑星インテリジェンスが世界の公衆衛生をどのようにサポートしているか</a>
-    <div class="main-meta">Google Official Blog / Fri, 13 Mar 2026 15:00:00 +0000</div>
-    <div class="main-summary">衛星から見た街の様子。赤い屋根が特徴的な密集した円形の歴史的中心部が特徴で、その周囲を新興住宅街と緑と黄褐色の農地の広大な幾何学模様のパッチワークに囲まれています。</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blogs.microsoft.com/blog/2026/03/12/microsoft-announces-experiences-devices-leadership-changes/" target="_blank" rel="noopener noreferrer">Microsoft、エクスペリエンス + デバイスのリーダーシップの変更を発表</a>
-    <div class="main-meta">Microsoft Blog / Thu, 12 Mar 2026 15:02:30 +0000</div>
-    <div class="main-summary"><p>エクスペリエンス + デバイス担当エグゼクティブ バイスプレジデントの Rajesh Jha 氏と会長兼 CEO の Satya Nadella 氏は今朝、以下のコミュニケーションを Microsoft 従業員と共有しました。RAJESH JHA メッセージ 件名: 将来の計画と私の移行 チームの皆様、マイクロソフトで 35 年以上働いた後、私は退職の時期を迎えています。7 月 1 日に退職し、その後は...</p>
-<p>投稿 <a href="https://blogs.microsoft.com/blog/2026/03/12/microsoft-announces- experiences-devices-leadership-changes/">Microsoft、エクスペリエンス + デバイスのリーダーシップの変更を発表</a>は、<a href="https://blogs.microsoft.com">公式 Microsoft ブログ</a>に最初に掲載されました。</p></div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/innovation-and-ai/technology/health/google-ai-heart-health-australia/" target="_blank" rel="noopener noreferrer">AI がオーストラリアの田舎の心臓の健康改善にどのように貢献しているか</a>
-    <div class="main-meta">Google Official Blog / Thu, 12 Mar 2026 15:00:00 +0000</div>
-    <div class="main-summary">医師は患者の机を挟んで向かい側に座っています。医師はタブレットとペンを持っています。医療カルテのレンダリングはバックグラウンドで行われます。</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/innovation-and-ai/technology/research/gemini-help-communities-predict-crisis/" target="_blank" rel="noopener noreferrer">Groundsource: AI を使用してコミュニティが自然災害をより適切に予測できるようにする</a>
-    <div class="main-meta">Google Official Blog / Thu, 12 Mar 2026 13:00:00 +0000</div>
-    <div class="main-summary">洪水監視を示す 4 つの垂直パネル: 警告マーカー付きの海岸地図、浸水した車の俯瞰図、河川の流量予測グラフ、曲がりくねった水路の航空写真。</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/" target="_blank" rel="noopener noreferrer">Gemini でマップをどのように再考するか</a>
-    <div class="main-meta">Google Official Blog / Thu, 12 Mar 2026 12:30:00 +0000</div>
-    <div class="main-summary">イマーシブ ナビゲーションと Ask Maps を強調した画像</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/platform-37-the-ai-exchange/" target="_blank" rel="noopener noreferrer">Platform 37 と The AI Exchange: AI のイノベーションと発見のための新しいスペース</a>
-    <div class="main-meta">Google Official Blog / Thu, 12 Mar 2026 10:00:00 +0000</div>
-    <div class="main-summary">37番線ビル</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/innovation-and-ai/technology/safety-security/gsec-summit-2026-recap/" target="_blank" rel="noopener noreferrer">「デジタル時代の成長」サミットから得た 6 つのポイント</a>
-    <div class="main-meta">Google Official Blog / Thu, 12 Mar 2026 09:00:00 +0000</div>
-    <div class="main-summary">「デジタル時代の成長」サミットで講演</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-paid-games-updates/" target="_blank" rel="noopener noreferrer">Google Play で有料ゲームを試し、購入し、マスターする新しい方法</a>
-    <div class="main-meta">Google Official Blog / Wed, 11 Mar 2026 23:00:00 +0000</div>
-    <div class="main-summary">この Google Play ビデオでは、青いドラゴンがネオン トンネルを飛んでいます。このビデオでは、モバイル デバイスや PC でプレイされるさまざまなゲームが紹介されています。</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/innovation-and-ai/technology/families/growing-up-digital-age-gemini-youth/" target="_blank" rel="noopener noreferrer">若者向けのより安全な生成 AI のロードマップ</a>
-    <div class="main-meta">Google Official Blog / Wed, 11 Mar 2026 16:00:00 +0000</div>
-    <div class="main-summary">ステージで話す人</div>
-  </div>
-
-  <div class="main-news-item">
-    <a href="https://blog.google/products/ads-commerce/bidding-and-budgeting-with-ai/" target="_blank" rel="noopener noreferrer">Ads Decoded のエピソード 4 では、キャンペーンのパフォーマンスを向上させるために入札と予算を強化する方法について説明します。</a>
-    <div class="main-meta">Google Official Blog / Wed, 11 Mar 2026 13:00:00 +0000</div>
-    <div class="main-summary"><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/S1E4.max-600x600.format-webp.webp" />Ads Decoded では、プロダクト マネージャーの Kristina Park 氏と Carlo Buchmann 氏による入札と予算編成に関する会話が特集されています。</div>
-  </div>
-
-  <div class="sub-title">その他のニュース</div>
-  <ul class="sub-list">
-
-    <li>
-      <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/wiz-acquisition/" target="_blank" rel="noopener noreferrer">GoogleがWizの買収を完了</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/products-and-platforms/products/chrome/chrome-expands-india-new-zealand-canada/" target="_blank" rel="noopener noreferrer">Chrome の AI エクスペリエンスをインド、ニュージーランド、カナダに拡大</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/" target="_blank" rel="noopener noreferrer">Gemini Embedding 2: 当社初のネイティブマルチモーダル埋め込みモデル</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" target="_blank" rel="noopener noreferrer">ドキュメント、スプレッドシート、スライド、ドライブで Gemini を使ってより速く作成する新しい方法</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/" target="_blank" rel="noopener noreferrer">Google スプレッドシートの Gemini は最先端のパフォーマンスを達成しました。</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/innovation-and-ai/technology/health/google-ai-breast-cancer-detection/" target="_blank" rel="noopener noreferrer">AI は英国における乳がんの検出をどのように改善できるか</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/" target="_blank" rel="noopener noreferrer">インテリジェンス + 信頼に基づいて構築された First Frontier Suite の紹介</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/company-news/inside-google/around-the-globe/google-asia/gemini-malaysia-universities/" target="_blank" rel="noopener noreferrer">マレーシアのすべての公立大学で Gemini for Education を実現</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/iwd-whm-the-art-of-the-possible/" target="_blank" rel="noopener noreferrer">今年の国際女性デーに可能性のある芸術を讃える</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/company-news/outreach-and-initiatives/sustainability/speciesnet-open-source-ai-wildlife/" target="_blank" rel="noopener noreferrer">当社のオープンソース AI モデル SpeciesNet が野生動物の保護促進にどのように貢献しているか</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/innovation-and-ai/technology/developers-tools/io-save-the-date-2026-gemini/" target="_blank" rel="noopener noreferrer">I/O で AI ベースのゲームをプレイする 日付を保存する</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blog.google/company-news/inside-google/googlers/how-google-ai-visual-search-works/" target="_blank" rel="noopener noreferrer">Techspert に聞く: AI は私の視覚的な検索をどのように理解しますか?</a>
-      <span class="sub-meta">Google Official Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/02/27/microsoft-and-openai-joint-statement-on-continuing-partnership/" target="_blank" rel="noopener noreferrer">Microsoft と OpenAI の継続的なパートナーシップに関する共同声明</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/" target="_blank" rel="noopener noreferrer">Microsoft Soverene Cloud は、完全に接続されていない場合でも安全に実行される大規模な AI モデルのガバナンス、生産性、サポートを追加します。</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/02/20/asha-sharma-named-evp-and-ceo-microsoft-gaming/" target="_blank" rel="noopener noreferrer">Asha Sharma が Microsoft Gaming の副社長兼 CEO に任命</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/02/18/a-milestone-achievement-in-our-journey-to-carbon-negative/" target="_blank" rel="noopener noreferrer">カーボンネガティブへの取り組みにおけるマイルストーンの達成</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/02/04/updates-in-two-of-our-core-priorities/" target="_blank" rel="noopener noreferrer">2 つの中核的優先事項のアップデート</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/01/27/how-microsoft-is-empowering-frontier-transformation-with-intelligence-trust/" target="_blank" rel="noopener noreferrer">Microsoft はインテリジェンスと信頼性でフロンティアの変革をどのように支援しているか</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/" target="_blank" rel="noopener noreferrer">Maia 200: 推論用に構築された AI アクセラレータ</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://blogs.microsoft.com/blog/2026/01/13/announcing-open-to-work-how-to-get-ahead-in-the-age-of-ai/" target="_blank" rel="noopener noreferrer">オープン・トゥ・ワークの発表: AI の時代で前進する方法</a>
-      <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6573205?source=rss" target="_blank">ガラケー型スマホ 在庫切れの店も</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Sun, 15 Mar 2026 07:30:29 GMT</li>
   </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6573092?source=rss" target="_blank">Netflix日本幹部 WBC批判に答え</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Sat, 14 Mar 2026 07:23:49 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6573064?source=rss" target="_blank">iPhone17eの狙い Apple幹部語る</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Sat, 14 Mar 2026 02:57:39 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6573005?source=rss" target="_blank">AI音声で初の議員点呼 衆院本会議</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Fri, 13 Mar 2026 08:45:25 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6572984?source=rss" target="_blank">攻撃動画にゲーム画面 米投稿物議</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Fri, 13 Mar 2026 05:21:32 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6572954?source=rss" target="_blank">「ロボットの家電化」進む中国</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Fri, 13 Mar 2026 00:24:18 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6572927?source=rss" target="_blank">メタ 25年に不正広告100万件削除</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Thu, 12 Mar 2026 11:51:38 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://news.yahoo.co.jp/pickup/6572864?source=rss" target="_blank">ランサムウエア被害 高止まり続く</a></li>
+    <li></li>
+    <li class="meta">Yahooニュース IT / Thu, 12 Mar 2026 01:36:08 GMT</li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://www.watch.impress.co.jp/docs/series/suzukij/2093082.html" target="_blank">【鈴木淳也のPay Attention】クレカ乗車で「定期券」はどう変わるのか?　熊本に見る交通系IC“棲み分け”</a></li>
+    <li>既報の通り、三井住友カードは3月9日、東京都内で「stera transit シンポジウム 2026」を開催し、同社が推進する“タッチ決済”による公共交通乗車サービス「stera transit」の最新情報や新サービスについて紹介した。</li>
+    <li class="meta">Impress Watch / </li>
+  </ul>
+</div>
+
+<div class="card">
+  <ul>
+    <li><a href="https://www.watch.impress.co.jp/docs/review/minireview/2091731.html" target="_blank">「HUAWEI Band 11 Pro」の完成度　軽量・長持ち・GPS対応の新スマートウォッチに【ミニレビュー】</a></li>
+    <li>ファーウェイ・ジャパンから、薄型軽量スマートウォッチ「HUAWEI Band 11 Pro」が発売されました。価格は11,880円です。「HUAWEI Band 4 Pro」以来6年ぶりとなるProモデルとして国内投入されました。</li>
+    <li class="meta">Impress Watch / </li>
+  </ul>
+</div>
+
+<div class="section-title">公式ドキュメント・ブログ TOP10</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/innovation-and-ai/technology/health/google-earth-ai-global-public-health/" target="_blank">Google Earth AI の惑星インテリジェンスが世界の公衆衛生をどのようにサポートしているか</a></li>
+    <li>衛星から見た都市の眺め。赤い屋根が特徴的な密集した円形の歴史的中心部が特徴で、その周囲を新興住宅街と緑と黄褐色の農地の広大な幾何学模様のパッチワークに囲まれています。</li>
+    <li class="meta">Google Official Blog / Fri, 13 Mar 2026 15:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blogs.microsoft.com/blog/2026/03/12/microsoft-announces-experiences-devices-leadership-changes/" target="_blank">Microsoft、エクスペリエンス + デバイスのリーダーシップの変更を発表</a></li>
+    <li><p>エクスペリエンス + デバイス担当エグゼクティブ バイスプレジデントの Rajesh Jha 氏と会長兼 CEO の Satya Nadella 氏は今朝、以下のコミュニケーションを Microsoft 従業員と共有しました。RAJE…</li>
+    <li class="meta">Microsoft Blog / Thu, 12 Mar 2026 15:02:30 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/innovation-and-ai/technology/health/google-ai-heart-health-australia/" target="_blank">AI がオーストラリアの田舎の心臓の健康改善にどのように貢献しているか</a></li>
+    <li>医師は患者の机を挟んで向かい側に座っています。医師はタブレットとペンを持っています。医療カルテのレンダリングはバックグラウンドで行われます。</li>
+    <li class="meta">Google Official Blog / Thu, 12 Mar 2026 15:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/innovation-and-ai/technology/research/gemini-help-communities-predict-crisis/" target="_blank">Groundsource: AI を使用してコミュニティが自然災害をより適切に予測できるようにする</a></li>
+    <li>洪水監視を示す 4 つの垂直パネル: 警告マーカー付きの海岸地図、浸水した車の俯瞰図、河川の流量予測グラフ、曲がりくねった水路の航空写真。</li>
+    <li class="meta">Google Official Blog / Thu, 12 Mar 2026 13:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/" target="_blank">Gemini でマップをどのように再考するか</a></li>
+    <li>イマーシブ ナビゲーションと Ask Maps を強調した画像</li>
+    <li class="meta">Google Official Blog / Thu, 12 Mar 2026 12:30:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/platform-37-the-ai-exchange/" target="_blank">Platform 37 と The AI Exchange: AI のイノベーションと発見のための新しいスペース</a></li>
+    <li>37番線ビル</li>
+    <li class="meta">Google Official Blog / Thu, 12 Mar 2026 10:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/innovation-and-ai/technology/safety-security/gsec-summit-2026-recap/" target="_blank">「デジタル時代の成長」サミットから得た 6 つのポイント</a></li>
+    <li>「デジタル時代の成長」サミットで講演</li>
+    <li class="meta">Google Official Blog / Thu, 12 Mar 2026 09:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-paid-games-updates/" target="_blank">Google Play で有料ゲームを試し、購入し、マスターする新しい方法</a></li>
+    <li>この Google Play ビデオでは、青いドラゴンがネオン トンネルを飛んでいます。このビデオでは、モバイル デバイスや PC でプレイされるさまざまなゲームが紹介されています。</li>
+    <li class="meta">Google Official Blog / Wed, 11 Mar 2026 23:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/innovation-and-ai/technology/families/growing-up-digital-age-gemini-youth/" target="_blank">若者向けのより安全な生成 AI のロードマップ</a></li>
+    <li>ステージで話す人</li>
+    <li class="meta">Google Official Blog / Wed, 11 Mar 2026 16:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="card card-official">
+  <ul>
+    <li><a href="https://blog.google/products/ads-commerce/bidding-and-budgeting-with-ai/" target="_blank">Ads Decoded のエピソード 4 では、キャンペーンのパフォーマンスを向上させるために入札と予算を強化する方法について説明します。</a></li>
+    <li><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/S1E4.max-600x600.format-webp.webp" />Ads Decod…</li>
+    <li class="meta">Google Official Blog / Wed, 11 Mar 2026 13:00:00 +0000</li>
+  </ul>
+</div>
+
+<div class="section-title">その他のニュース（20件）</div>
+<ul class="sub-list">
+
+  <li>
+    <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/wiz-acquisition/" target="_blank">GoogleがWizの買収を完了</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/products-and-platforms/products/chrome/chrome-expands-india-new-zealand-canada/" target="_blank">Chrome の AI エクスペリエンスをインド、ニュージーランド、カナダに拡大</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/" target="_blank">Gemini Embedding 2: 当社初のネイティブマルチモーダル埋め込みモデル</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/" target="_blank">ドキュメント、スプレッドシート、スライド、ドライブで Gemini を使ってより迅速に作成する新しい方法</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/" target="_blank">Google スプレッドシートの Gemini は最先端のパフォーマンスを達成しました。</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/innovation-and-ai/technology/health/google-ai-breast-cancer-detection/" target="_blank">AI は英国における乳がんの検出をどのように改善できるか</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/" target="_blank">インテリジェンス + 信頼に基づいて構築された First Frontier Suite の紹介</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/company-news/inside-google/around-the-globe/google-asia/gemini-malaysia-universities/" target="_blank">マレーシアのすべての公立大学で Gemini for Education を実現</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/iwd-whm-the-art-of-the-possible/" target="_blank">今年の国際女性デーに可能性のある芸術を讃える</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/company-news/outreach-and-initiatives/sustainability/speciesnet-open-source-ai-wildlife/" target="_blank">当社のオープンソース AI モデル SpeciesNet が野生動物の保護促進にどのように貢献しているか</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/innovation-and-ai/technology/developers-tools/io-save-the-date-2026-gemini/" target="_blank">I/O で AI ベースのゲームをプレイする 日付を保存する</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blog.google/company-news/inside-google/googlers/how-google-ai-visual-search-works/" target="_blank">Techspert に聞く: AI は私の視覚的な検索をどのように理解しますか?</a>
+    <span class="sub-meta"> / Google Official Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/02/27/microsoft-and-openai-joint-statement-on-continuing-partnership/" target="_blank">Microsoft と OpenAI の継続的なパートナーシップに関する共同声明</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/" target="_blank">Microsoft Soverene Cloud は、完全に接続されていない場合でも安全に実行される大規模な AI モデルのガバナンス、生産性、サポートを追加します。</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/02/20/asha-sharma-named-evp-and-ceo-microsoft-gaming/" target="_blank">Asha Sharma が Microsoft Gaming の副社長兼 CEO に任命</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/02/18/a-milestone-achievement-in-our-journey-to-carbon-negative/" target="_blank">カーボンネガティブへの取り組みにおけるマイルストーンの達成</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/02/04/updates-in-two-of-our-core-priorities/" target="_blank">2 つの中核的優先事項のアップデート</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/01/27/how-microsoft-is-empowering-frontier-transformation-with-intelligence-trust/" target="_blank">Microsoft はインテリジェンスと信頼性でフロンティアの変革をどのように支援しているか</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/" target="_blank">Maia 200: 推論用に構築された AI アクセラレータ</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+  <li>
+    <a href="https://blogs.microsoft.com/blog/2026/01/13/announcing-open-to-work-how-to-get-ahead-in-the-age-of-ai/" target="_blank">オープン・トゥ・ワークの発表: AI の時代で前進する方法</a>
+    <span class="sub-meta"> / Microsoft Blog</span>
+  </li>
+
+</ul>
 </div>
 </body>
 </html>
