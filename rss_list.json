@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {"name": "ITmedia", "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml", "priority": 2},
+    {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "priority": 2},
+    {"name": "ZDNet Japan", "url": "https://japan.zdnet.com/rss/index.rdf", "priority": 2},
+    {"name": "Yahooニュース IT", "url": "https://news.yahoo.co.jp/rss/topics/it.xml", "priority": 1},
+    {"name": "Google Official Blog", "url": "https://blog.google/rss/", "priority": 3},
+    {"name": "Microsoft Blog", "url": "https://blogs.microsoft.com/feed/", "priority": 3}
+  ]
+}
