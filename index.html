@@ -44,7 +44,8 @@ body {
   font-weight: bold;
   border-left: 4px solid #2f6fbd;
   padding-left: 8px;
-  margin-bottom: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .main-news-item {
@@ -61,6 +62,12 @@ body {
   color: #1a0dab;
   font-size: 16px;
   font-weight: bold;
+
+  /* タイトルを2行で省略 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .main-news-item a:hover {
@@ -121,9 +128,63 @@ body {
   <span class="logo">IT</span> News Daily
 </div>
 <div class="container">
-  <div class="updated">最終更新: 2026-03-15 06:08</div>
+  <div class="updated">最終更新: 2026-03-15 12:50</div>
 
-  <div class="main-title">重要ニュース TOP10</div>
+  <div class="main-title">ニュース TOP10</div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6573205?source=rss" target="_blank" rel="noopener noreferrer">ガラケー型スマホ 在庫切れの店も</a>
+    <div class="main-meta">Yahooニュース IT / Sun, 15 Mar 2026 07:30:29 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6573092?source=rss" target="_blank" rel="noopener noreferrer">Netflix日本幹部 WBC批判に答え</a>
+    <div class="main-meta">Yahooニュース IT / Sat, 14 Mar 2026 07:23:49 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6573064?source=rss" target="_blank" rel="noopener noreferrer">iPhone17eの狙い Apple幹部語る</a>
+    <div class="main-meta">Yahooニュース IT / Sat, 14 Mar 2026 02:57:39 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6573005?source=rss" target="_blank" rel="noopener noreferrer">AI音声で初の議員点呼 衆院本会議</a>
+    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 08:45:25 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6572984?source=rss" target="_blank" rel="noopener noreferrer">攻撃動画にゲーム画面 米投稿物議</a>
+    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 05:21:32 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6572954?source=rss" target="_blank" rel="noopener noreferrer">「ロボットの家電化」進む中国</a>
+    <div class="main-meta">Yahooニュース IT / Fri, 13 Mar 2026 00:24:18 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6572927?source=rss" target="_blank" rel="noopener noreferrer">メタ 25年に不正広告100万件削除</a>
+    <div class="main-meta">Yahooニュース IT / Thu, 12 Mar 2026 11:51:38 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://news.yahoo.co.jp/pickup/6572864?source=rss" target="_blank" rel="noopener noreferrer">ランサムウエア被害 高止まり続く</a>
+    <div class="main-meta">Yahooニュース IT / Thu, 12 Mar 2026 01:36:08 GMT</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://www.watch.impress.co.jp/docs/series/suzukij/2093082.html" target="_blank" rel="noopener noreferrer">【鈴木淳也のPay Attention】クレカ乗車で「定期券」はどう変わるのか?　熊本に見る交通系IC“棲み分け”</a>
+    <div class="main-meta">Impress Watch / </div>
+    <div class="main-summary">既報の通り、三井住友カードは3月9日、東京都内で「stera transit シンポジウム 2026」を開催し、同社が推進する“タッチ決済”による公共交通乗車サービス「stera transit」の最新情報や新サービスについて紹介した。</div>
+  </div>
+
+  <div class="main-news-item">
+    <a href="https://www.watch.impress.co.jp/docs/review/minireview/2091731.html" target="_blank" rel="noopener noreferrer">「HUAWEI Band 11 Pro」の完成度　軽量・長持ち・GPS対応の新スマートウォッチに【ミニレビュー】</a>
+    <div class="main-meta">Impress Watch / </div>
+    <div class="main-summary">ファーウェイ・ジャパンから、薄型軽量スマートウォッチ「HUAWEI Band 11 Pro」が発売されました。価格は11,880円です。「HUAWEI Band 4 Pro」以来6年ぶりとなるProモデルとして国内投入されました。</div>
+  </div>
+
+  <div class="main-title">公式ドキュメント・ブログ TOP10</div>
 
   <div class="main-news-item">
     <a href="https://blog.google/innovation-and-ai/technology/health/google-earth-ai-global-public-health/" target="_blank" rel="noopener noreferrer">Google Earth AI の惑星インテリジェンスが世界の公衆衛生をどのようにサポートしているか</a>
@@ -287,396 +348,6 @@ body {
     <li>
       <a href="https://blogs.microsoft.com/blog/2026/01/13/announcing-open-to-work-how-to-get-ahead-in-the-age-of-ai/" target="_blank" rel="noopener noreferrer">オープン・トゥ・ワークの発表: AI の時代で前進する方法</a>
       <span class="sub-meta">Microsoft Blog</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6573092?source=rss" target="_blank" rel="noopener noreferrer">Netflix日本幹部 WBC批判に答え</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6573064?source=rss" target="_blank" rel="noopener noreferrer">iPhone17eの狙い Apple幹部語る</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6573005?source=rss" target="_blank" rel="noopener noreferrer">AI音声で初の議員点呼 衆院本会議</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6572984?source=rss" target="_blank" rel="noopener noreferrer">攻撃動画にゲーム画面 米投稿物議</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6572954?source=rss" target="_blank" rel="noopener noreferrer">「ロボットの家電化」進む中国</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6572927?source=rss" target="_blank" rel="noopener noreferrer">メタ 25年に不正広告100万件削除</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6572864?source=rss" target="_blank" rel="noopener noreferrer">ランサムウエア被害 高止まり続く</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://news.yahoo.co.jp/pickup/6572809?source=rss" target="_blank" rel="noopener noreferrer">AI専用SNSのMoltbook メタが買収</a>
-      <span class="sub-meta">Yahooニュース IT</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/series/suzukij/2093082.html" target="_blank" rel="noopener noreferrer">【鈴木淳也のPay Attention】クレカ乗車で「定期券」はどう変わるのか?　熊本に見る交通系IC“棲み分け”</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/review/minireview/2091731.html" target="_blank" rel="noopener noreferrer">「HUAWEI Band 11 Pro」の完成度　軽量・長持ち・GPS対応の新スマートウォッチに【ミニレビュー】</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2092931.html" target="_blank" rel="noopener noreferrer">大谷翔平、グランドセイコーのグローバルパートナーに</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093201.html" target="_blank" rel="noopener noreferrer">横浜DeNAベイスターズデザインのランドセル　ロゴを刺繍</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093217.html" target="_blank" rel="noopener noreferrer">オリコ、セブン銀行ATMで口座振替登録に対応　7月から</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093228.html" target="_blank" rel="noopener noreferrer">グーグル、AIで都市型鉄砲水を最大24時間前に予測</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093247.html" target="_blank" rel="noopener noreferrer">PayPay、米国市場　日本から世界に挑戦</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093231.html" target="_blank" rel="noopener noreferrer">Gemini融合の新Google マップ、「何でも質問」可能に　道路の立体表示も</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093267.html" target="_blank" rel="noopener noreferrer">Lime、電動キックボード終了　座れる「Limeラクモ」に一本化</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093264.html" target="_blank" rel="noopener noreferrer">Claude、チャット内で図やグラフを生成可能に</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2092968.html" target="_blank" rel="noopener noreferrer">NTT、海底ケーブルの伝送容量を4倍に　マルチコア光ファイバー活用</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093272.html" target="_blank" rel="noopener noreferrer">GMOのオンライン決済がVisaの「クリック決済」に対応</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093369.html" target="_blank" rel="noopener noreferrer">大分の路線バス、クレカタッチ乗車に対応　県内初</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093393.html" target="_blank" rel="noopener noreferrer">国立競技場に「NTTドコモ ゲート」　ドコモMAXラウンジも</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093400.html" target="_blank" rel="noopener noreferrer">三井不動産、“オール顔認証”の賃貸マンションを横浜に</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093396.html" target="_blank" rel="noopener noreferrer">TikTok、Apple Music連携で楽曲フル再生　同時試聴も</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093418.html" target="_blank" rel="noopener noreferrer">マイナポータル、「ホーム画面」の改善を実証　タブを下から上に</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/series/itsmo/2091602.html" target="_blank" rel="noopener noreferrer">【いつモノコト】ソニー最強イヤフォン「WF-1000XM6」でボッチ飯がはかどる話</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/news/2093357.html" target="_blank" rel="noopener noreferrer">シチズン、レトロモデルに90sポップカラー</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.watch.impress.co.jp/docs/series/itsmo/2089179.html" target="_blank" rel="noopener noreferrer">【いつモノコト】屋内も屋外もこれ1本! JINSの「可視光調光レンズ」で視界が変わった</a>
-      <span class="sub-meta">Impress Watch</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/15/news002.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] ガラケー型スマホ「ケースマ」が売れているワケ　在庫切れで入手困難な店舗も　メーカーに方針を聞いた</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/15/news003.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] 3つ折りよりも2つ折り　Huaweiで最も人気の「Mate X7」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/15/news015.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] 【ダイソー】770円の「多関節アーム　デバイスホルダー」　機器のポジションを自在に変えられる</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/15/news005.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] 子どもに人気の職業　小学生1位は「ネット配信者」、中学生と高校生は？</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/15/news008.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] 祇園に「1泊300万円の部屋」　泊まる人は何をしているのか　帝国ホテルの総支配人に聞いた</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/15/news018.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「MacBook Neo」をiFixitが分解　「過去14年で最も修理しやすいMacBook」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/15/news013.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「ぽこ あ ポケモン」のかわいさにキュン死寸前のマンガ家、Switch 2の“弱点”に救われる</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/15/news009.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] 「Steam Machine」などは2026年内発売に？　一方でSteam Deck OLEDは値上げ／Microsoftが新プラン「Microsoft 365 E7」を提供開始</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/14/news029.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] 時刻表に載らない“謎の列車”　秩父鉄道に鉄道ファンが集まった理由</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/14/news027.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] ドコモのAndroidスマホの標準メッセージアプリが「Google メッセージ」に　「＋メッセージ」はどうなるのか？</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/14/news026.html" target="_blank" rel="noopener noreferrer">[ITmedia News] AI軍事利用の「いつかきた道」　テクノロジーの使い方に誰が“鈴をつける”のか</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/14/news023.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 令和の風景を昭和に変える面妖な“チェキ“、「instax mini Evo Cinema」でメディアの変遷を追いかけた</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/14/news021.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] Ankerの最大20W出力＆2ポート搭載のコンパクト充電器、USB Type-Cケーブルが付属</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/14/news002.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] ドコモ3G終了が迫る　放置すると「自動解約」に　FOMAユーザーが注意すべきこと</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/14/news008.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] 「ららぽーと豊洲」大規模リニューアル、都内初出店含む31店舗オープン</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/14/news025.html" target="_blank" rel="noopener noreferrer">[ITmedia News] AIボットの猛攻でソーシャルニュースサイトDiggが再起動2カ月後に「ハードリセット」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/enterprise/articles/2603/14/news013.html" target="_blank" rel="noopener noreferrer">[ITmedia エンタープライズ] AIによるbot通信の8割がクローラー　Metaが過半数を占める実態</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/enterprise/articles/2603/14/news017.html" target="_blank" rel="noopener noreferrer">[ITmedia エンタープライズ] IPA、サプライチェーンの企業間データ連携に関する共通指針を公開　「データスペース」で信頼性のあるデータ流通目指す</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/enterprise/articles/2603/14/news010.html" target="_blank" rel="noopener noreferrer">[ITmedia エンタープライズ] Active Directory到達まで約3.4時間　サイバー攻撃の調査で分かった厳しい実態</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/14/news004.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] 「ポラロイド」はまだ生きている　日本市場に“ピント”のワケ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/14/news022.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] 新生活の自作PC予算は「20万円強」が新常識に？　価格高騰下のアキバで聞いた2026年春のトレンド</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/14/news024.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] Apple幹部が語る「iPhone 17e」投入の理由　「MacBook Neo」との連携も狙った“エコシステム総取り戦略”へ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news115.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] ドコモ、ahamoからドコモ MAXへの変更で月額2200円～2750円を割り引くキャンペーン</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news114.html" target="_blank" rel="noopener noreferrer">[ITmedia News] Lime、電動キックボード提供終了　座って乗れる電動シートボードのみに　電動アシスト自転車を追加予定</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news112.html" target="_blank" rel="noopener noreferrer">[ITmedia News] IPA、システム移行に苦戦中？　CBTのITパスポート試験の休止時期が後ろ倒し　26年4月→27年1月以降に</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news109.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] IIJが「Galaxy S26」シリーズを発売、MNP特価でS26が11万6800円から</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/13/news102.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] Adobe CEO退任へ　AI競争の中で株価下落、投資家の懸念とは</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news106.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] ソースネクスト、発熱／膨張リスクを低減する「準固体電池モバイルバッテリー」発売　3月26日まで20％割引</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news103.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「呪怨」の原点を劇場でまさかのVHS上映、4K版と比較する「検証上映会」を東映ビデオが開催へ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news100.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] KTC、量子ドット技術を採用した27型4K液晶ディスプレイ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news099.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「担当者のボタン押し忘れ」でセール延期　尻で戦うSwitchゲーム「ケツバトラー」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news096.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] LGエレ、ウルトラワイド表示に対応した湾曲34型液晶ディスプレイ2製品を発売</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news092.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] リンクスインターナショナルが中国INNOCN製ディスプレイの取り扱いを開始</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news028.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] ワコム上位機に肉薄？　10万円で18.4型4K！　高コスパ液タブ「GAOMON Pro 19」の長所と弱点</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news091.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] auの「iPhone Air（256GB）」が2年間2万6400円に　MNPや端末返却などが条件【スマホお得情報】</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news089.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] 「AEON Pay」アプリを4月6日から提供　起動時に決済画面、「イオンペイ♪」の決済音も</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news086.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「Claude」の“偽サイト”登場　「日本語無料版」など巧みに誘う　すでに閲覧不能も検索順位の高さは脅威</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news082.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] MVNOサービスの利用者最多はIIJmio、満足度1位は日本通信　MMD調べ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/business/articles/2603/13/news085.html" target="_blank" rel="noopener noreferrer">[ITmedia ビジネスオンライン] スナックをDXで「見える化」　「入りづらい」「会計がママ頼み」の解決策</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news087.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] LGエレ、フラグシップ16型ノート「LG gram Pro 16」にRyzen AI 5搭載モデルを追加</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news027.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] 新品は絶滅、中古は高騰──「令和にMDを聞きたい」と願った筆者が、理想の再生環境を整えるまでの一部始終</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news084.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] Apple、旧型iPhone・iPad向けに緊急セキュリティ更新を配信</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news081.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] JBL、高機能ノイズキャンセリング機能を備えたワイヤレスヘッドフォン「JBL Live 780NC」「JBL Live 680NC」発表</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news080.html" target="_blank" rel="noopener noreferrer">[ITmedia News] GoogleマップがGeminiで進化　AIが複雑な質問に答える「Ask Maps」と3Dナビ「Immersive Navigation」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/mobile/articles/2603/13/news079.html" target="_blank" rel="noopener noreferrer">[ITmedia Mobile] 「Pokemon GO Fest 2026」一般チケット販売開始も時間に誤表記、「午前の部を買ったのに午後の部になった」</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/pcuser/articles/2603/13/news062.html" target="_blank" rel="noopener noreferrer">[ITmedia PC USER] Elgatoが次世代オーディオ環境「Wave Next」を発表　DSP処理内蔵の新型マイクやミキサー、超大型「Stream Deck + XL」などを投入</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news073.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 「とほほのWWW入門」30年目も更新中　96年開設の個人サイト、CGIからOpenAI APIまでカバー</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news072.html" target="_blank" rel="noopener noreferrer">[ITmedia News] 空爆映像に任天堂「Wii Sports」の映像使用　ホワイトハウス公式がXで動画公開、国内外から批判集中</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://mag.executive.itmedia.co.jp/executive/articles/2603/13/news071.html" target="_blank" rel="noopener noreferrer">[ITmedia エグゼクティブ] 研究者が「副業」で企業支援　新しい産学ネットワークを構築、ベンチャーのアークレブ</a>
-      <span class="sub-meta">ITmedia</span>
-    </li>
-
-    <li>
-      <a href="https://www.itmedia.co.jp/news/articles/2603/13/news069.html" target="_blank" rel="noopener noreferrer">[ITmedia News] AdobeのナラヤンCEOが退任表明、18年の長期政権に幕　「最高の日々はこれから」</a>
-      <span class="sub-meta">ITmedia</span>
     </li>
 
   </ul>
