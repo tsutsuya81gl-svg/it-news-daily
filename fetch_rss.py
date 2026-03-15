@@ -55,13 +55,14 @@ for src in rss_sources:
             "published": published,
             "published_dt": published_dt,
             "source": src["name"],
-            "priority": src["priority"]
+            "priority": src["priority"],
+            "kind": src.get("type", "news")  # news / official
         })
 
 # 重複排除（タイトル類似度）
 filtered = []
 for item in items:
-    is_duplicate = False
+    is_duplicate = False    # 類似タイトルを排除
     for f in filtered:
         if similar(item["title"], f["title"]) > 0.7:
             # priority が高い方を残す
@@ -76,9 +77,20 @@ for item in items:
 # 重要度順にソート（priority → 日付）
 filtered.sort(key=lambda x: (x["priority"], x["published_dt"]), reverse=True)
 
-# TOP10 と 残りに分割
-top_items = filtered[:10]
-other_items = filtered[10:]
+# カテゴリ別に分割
+news_items = [i for i in filtered if i["kind"] == "news"]
+official_items = [i for i in filtered if i["kind"] == "official"]
+
+# 各カテゴリの TOP10
+top_news = news_items[:10]
+top_official = official_items[:10]
+
+# TOP から外れたものを「その他候補」に
+top_keys = {(i["title"], i["link"]) for i in top_news + top_official}
+other_candidates = [i for i in filtered if (i["title"], i["link"]) not in top_keys]
+
+# その他は 20 件まで
+other_items = other_candidates[:20]
 
 # HTML生成（Yahoo!ニュースっぽいレイアウト）
 html = f"""
@@ -127,7 +139,8 @@ body {{
   font-weight: bold;
   border-left: 4px solid #2f6fbd;
   padding-left: 8px;
-  margin-bottom: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }}
 
 .main-news-item {{
@@ -144,6 +157,12 @@ body {{
   color: #1a0dab;
   font-size: 16px;
   font-weight: bold;
+
+  /* タイトルを2行で省略 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }}
 
 .main-news-item a:hover {{
@@ -206,11 +225,11 @@ body {{
 <div class="container">
   <div class="updated">最終更新: {datetime.now().strftime("%Y-%m-%d %H:%M")}</div>
 
-  <div class="main-title">重要ニュース TOP10</div>
+  <div class="main-title">ニュース TOP10</div>
 """
 
-# TOP10（大きく表示）
-for item in top_items:
+# ニュース TOP10（短縮タイトル＋概略＋リンク）
+for item in top_news:
     html += f"""
   <div class="main-news-item">
     <a href="{item['link']}" target="_blank" rel="noopener noreferrer">{item['title']}</a>
@@ -221,7 +240,23 @@ for item in top_items:
 """
     html += "  </div>\n"
 
-# 残り（概要メモ風）
+# 公式ドキュメント・ブログ TOP10
+html += """
+  <div class="main-title">公式ドキュメント・ブログ TOP10</div>
+"""
+
+for item in top_official:
+    html += f"""
+  <div class="main-news-item">
+    <a href="{item['link']}" target="_blank" rel="noopener noreferrer">{item['title']}</a>
+    <div class="main-meta">{item['source']} / {item['published']}</div>
+"""
+    if item["summary"]:
+        html += f"""    <div class="main-summary">{item['summary']}</div>
+"""
+    html += "  </div>\n"
+
+# その他（20件まで）
 html += """
   <div class="sub-title">その他のニュース</div>
   <ul class="sub-list">
